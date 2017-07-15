@@ -28,4 +28,4 @@ Libraries using Class Commons 2.0
 
 Any library using Class Commons 2.0 MUST probe for its existence using `pcall(require, "class.commons")`.
 
-In case it is absent it MAY error, or it MAY use its own class implementation. In either case, it MUST be reset to its initial value (which MAY be assumed to be `nil`) when the library finishes loading.
+In case it is absent it MAY error, or it MAY use its own class implementation. If providing its own implementation, it must not leave a permanent entry in `package.loaded["class.commons"]`.
