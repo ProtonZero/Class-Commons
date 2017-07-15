@@ -1,13 +1,9 @@
 Libraries implementing Class Commons 2.0
 ========================================
 
-Any library implementing this interface MUST comply to the following:
+The library <span style="font-variant:small-caps">must</span> inspect `package.loaded["class.commons"]`, and if it is `nil` then the library <span style="font-variant:small-caps">must</span> populate it with a table which <span style="font-variant:small-caps">must</span> provide the two functions `class` and `instance` as defined below.
 
-It MUST listen to the global variable `common_class`:
-
-It MUST provide the interface if that variable is true. It MUST NOT provide the interface if that variable is false. It MAY provide the interface if the variable is nil.
-
-It <span style="font-variant:small-caps">must</span> populate `package.loaded["class.commons"]` with a table which <span style="font-variant:small-caps">must</span> provide the two functions `class` and `instance` as defined below.
+## class
 
 	class = function (name, class, superclass)
 
@@ -21,6 +17,7 @@ Explanation of arguments:
  * `class` The class table.
  * `superclass` Optional superclass.
 
+## instance
 
 	instance = function (class, ...)
 
