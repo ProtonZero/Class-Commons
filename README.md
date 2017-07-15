@@ -1,18 +1,12 @@
-# Class Commons #
-*Class Commons* is a project to provide a common compatibility interface for class systems. The goal of this is to make libraries independent of class libraries, a library using the Class Commons API can then be used with any class system adhering to it (albeit via a compatibility layer).
+# Class Commons 2.0 #
+*Class Commons* is a project to provide a common compatibility interface for class systems. The goal of this is to make libraries independent of class libraries; a library using the Class Commons API can then be used with any class system adhering to it (albeit via a compatibility layer).
 
 ## Specification ##
-
-### Features ###
-* Single-class inheritance
-* Constructors
-* Instance methods
-* Polymorphism
 
 Class definition is single-write read-only, so the entire class has to be defined on creation.
 
 ### Functions ###
-	class = common.class(name, table, parents...)
+	class = common.class(name, table, superclass?)
 	instance = common.instance(class, ...)
 
 ### Class constructors ###
@@ -53,27 +47,10 @@ Instances may be created using `common.instance`:
 	function Ent:chop()
 		print("I am no tree, I am an ent!")
 	end
-	
+
 	Tree = common.class("Tree", Tree)
 	Ent = common.class("Ent", Ent, Tree)
 
 	local tree = common.instance(Ent)
 	tree:grow() --> Is a big tree now!
 	tree:chop() --> I am no tree, I am an ent!
-
-## Participating libraries ##
-* [SECS][]
-* [Slither][]
-* [MiddleClass][]
-* [hump.class][]
-* [30log][]
-
-## Repository information ##
-This repository will both contain documentation (like this very document) and tests. (Note: located in a subrepository.)
-The authors of participating libraries all get write access, and are free, and encouraged, to collaborate.
-
-[SECS]: http://love2d.org/wiki/Simple_Educative_Class_System
-[Slither]: http://bitbucket.org/bartbes/slither
-[MiddleClass]: http://github.com/kikito/middleclass/wiki
-[hump.class]: http://vrld.github.com/hump/#class
-[30log]: https://github.com/Yonaba/30log
