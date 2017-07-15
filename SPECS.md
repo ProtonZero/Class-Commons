@@ -1,5 +1,5 @@
-Libraries implementing Class Commons
-====================================
+Libraries implementing Class Commons 2.0
+========================================
 
 Any library implementing this interface MUST comply to the following:
 
