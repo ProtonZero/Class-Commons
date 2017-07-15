@@ -26,6 +26,6 @@ This MUST return an instance of the given class, initialized with `instance:init
 Libraries using Class Commons 2.0
 =================================
 
-Any library using Class Commons 2.0 <span style="font-variant:small-caps">must</span> probe for its existence using `pcall(require, "class.commons")`.
+Any library using Class Commons 2.0 MUST probe for its existence using `pcall(require, "class.commons")`.
 
 In case it is absent it MAY error, or it MAY use its own class implementation. In either case, it MUST be reset to its initial value (which MAY be assumed to be `nil`) when the library finishes loading.
