@@ -7,7 +7,9 @@ The library MUST inspect `package.loaded["class.commons"]`, and if it is `nil` t
 
 	class = function (name, class, superclass)
 
-This MUST return a class, and it SHOULD NOT set it as a global. It SHOULD NOT set any special functions, such as metamethods, based on the class's members.
+* This MUST return a class.
+* This MUST NOT store the returned class in a global variable.
+* This MUST NOT set any special functions, such as metamethods, based on the class's members.
 
 A class SHOULD be considered read-only after having been passed to `class`. Implementations MAY ignore any changes after the class has been created.
 
